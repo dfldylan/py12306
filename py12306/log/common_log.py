@@ -26,6 +26,7 @@ class CommonLog(BaseLog):
     MESSAGE_TEST_SEND_DINGTALK = '正在测试发送钉钉消息...'
     MESSAGE_TEST_SEND_TELEGRAM = '正在测试推送到Telegram...'
     MESSAGE_TEST_SEND_SERVER_CHAN = '正在测试发送ServerChan消息...'
+    MESSAGE_TEST_SEND_PUSHPLUS = '正在测试发送PushPlus消息...'
     MESSAGE_TEST_SEND_PUSH_BEAR = '正在测试发送PushBear消息...'
     MESSAGE_TEST_SEND_PUSH_BARK = '正在测试发送Bark消息...'
 
