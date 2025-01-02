@@ -49,6 +49,11 @@ class Notification():
         self.send_serverchan(skey=skey, title=title, content=content)
 
     @classmethod
+    def push_plus(cls, skey='', title='', content=''):
+        self = cls()
+        self.send_pushplus(skey=skey, title=title, content=content)
+
+    @classmethod
     def push_bear(cls, skey='', title='', content=''):
         self = cls()
         self.send_pushbear(skey=skey, title=title, content=content)
@@ -235,6 +240,20 @@ class Notification():
             CommonLog.add_quick_log(CommonLog.MESSAGE_SEND_PUSH_BEAR_SUCCESS).flush()
         except Exception as e:
             CommonLog.add_quick_log(CommonLog.MESSAGE_SEND_PUSH_BEAR_SUCCESS.format(e)).flush()
+
+    def send_pushplus(self, skey, title, content):
+        import requests
+        url = 'https://www.pushplus.plus/send'
+        data = {
+            'token': skey,
+            'title': title,
+            'content': content
+        }
+        try:
+            response = requests.post(url, json=data)
+            CommonLog.add_quick_log('PushPlus消息推送成功').flush()
+        except Exception as e:
+            CommonLog.add_quick_log('PushPlus消息推送失败'.format(e)).flush()
 
 
 if __name__ == '__main__':

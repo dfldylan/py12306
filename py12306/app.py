@@ -136,6 +136,10 @@ class App:
             CommonLog.add_quick_log(CommonLog.MESSAGE_TEST_SEND_PUSH_BARK).flush()
             Notification.push_bark('测试发送信息')
 
+        if Config().PUSHPLUS_ENABLED:  # PushPlus通知
+            CommonLog.add_quick_log(CommonLog.MESSAGE_TEST_SEND_PUSHPLUS).flush()
+            Notification.push_plus(Config().PUSHPLUS_KEY, '测试发送消息', 'By py12306')
+
     @classmethod
     def run_check(cls):
         """

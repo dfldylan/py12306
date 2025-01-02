@@ -79,6 +79,10 @@ class Config:
     PUSHBEAR_ENABLED = 0
     PUSHBEAR_KEY = 'SCUdafadsfasfdafdf45234234234'
 
+    # PushPlus配置
+    PUSHPLUS_ENABLED = 0
+    PUSHPLUS_KEY = 'SCUdafadsfasfdafdf45234234234'
+
     # 邮箱配置
     EMAIL_ENABLED = 0
     EMAIL_SENDER = ''
